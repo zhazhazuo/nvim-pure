@@ -1,3 +1,5 @@
+require('config.lspconfig')
+
 local opt = vim.opt
 
 -- remove the '~' in the empty content.
