@@ -9,7 +9,6 @@ local config = {
     rename = { enabled = true },
     words = { enabled = true },
     scope = { enabled = true },
-    scroll = { enabled = true },
     statuscolumn = { enabled = true },
     input = { enabled = true },
     image = {
