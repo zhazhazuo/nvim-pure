@@ -2,7 +2,15 @@ local neoscroll = {
 	"karb94/neoscroll.nvim",
 	event = "BufEnter",
 	config = function()
-		require("neoscroll").setup {}
+		require("neoscroll").setup({})
+	end,
+}
+
+local statusline = {
+	"echasnovski/mini.statusline",
+	version = "false",
+	config = function()
+		require("mini.statusline").setup()
 	end,
 }
 
@@ -43,15 +51,16 @@ local noice = {
 			presets = {
 				bottom_search = true,
 				-- command_palette = true,
-				-- long_message_to_split = true,
+				long_message_to_split = true,
 				-- inc_rename = false, -- enables an input dialog for inc-rename.nvim
 				lsp_doc_border = true,
 			},
 		},
-	}
+	},
 }
 
 return {
+	statusline,
 	noice,
 	neoscroll,
 }
