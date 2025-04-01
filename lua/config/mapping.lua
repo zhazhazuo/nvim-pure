@@ -47,6 +47,7 @@ map("i", "<C-h>", "<Left>", { desc = "move left" })
 map("i", "<C-l>", "<Right>", { desc = "move right" })
 map("i", "<C-j>", "<Down>", { desc = "move down" })
 map("i", "<C-k>", "<Up>", { desc = "move up" })
+map("i", "<C-E>", "<C-o>$", { noremap = true, desc = "move to end" })
 
 -- For terminal
 map('t', '<Esc>', '<C-\\><C-n>', { noremap = true })

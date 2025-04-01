@@ -39,7 +39,7 @@ opt.tabstop = 2
 opt.shiftround = true -- Round indent
 opt.shiftwidth = 2    -- Size of an indent
 
--- Ture color support
+-- True color support
 opt.termguicolors = true
 
 -- Allow cursor to move where there is no text in visual block mode
