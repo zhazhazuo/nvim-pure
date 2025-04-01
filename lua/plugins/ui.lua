@@ -1,3 +1,10 @@
+local pqf = {
+	"yorickpeterse/nvim-pqf",
+	config = function()
+		require('pqf').setup()
+	end
+}
+
 local neoscroll = {
 	"karb94/neoscroll.nvim",
 	event = "BufEnter",
@@ -60,6 +67,7 @@ local noice = {
 }
 
 return {
+	pqf,
 	statusline,
 	noice,
 	neoscroll,
