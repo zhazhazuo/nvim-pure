@@ -10,19 +10,29 @@ M.init = function(client)
 	end
 end
 
-lspconfig.lua_ls.setup({
-	settings = {
-		Lua = {
-			talemetry = {
-				enable = false,
-			},
-		},
-	},
-	capabilities = M.capabilities,
-	on_init = M.init,
-})
+local lsp_list = { 'lua_ls', 'ts_ls', 'markdown_oxide' }
 
-lspconfig.ts_ls.setup({
-	capabilities = M.capabilities,
-	on_init = M.init,
-})
+for _, lsp in ipairs(lsp_list) do
+	lspconfig[lsp].setup {
+
+		capabilities = require("blink.cmp").get_lsp_capabilities(M.capabilities),
+		on_init = M.init,
+	}
+end
+
+-- lspconfig.lua_ls.setup({
+-- 	settings = {
+-- 		Lua = {
+-- 			talemetry = {
+-- 				enable = false,
+-- 			},
+-- 		},
+-- 	},
+-- 	capabilities = M.capabilities,
+-- 	on_init = M.init,
+-- })
+--
+-- lspconfig.ts_ls.setup({
+-- 	capabilities = M.capabilities,
+-- 	on_init = M.init,
+-- })
