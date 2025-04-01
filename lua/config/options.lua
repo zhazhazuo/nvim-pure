@@ -1,6 +1,12 @@
 require('config.lspconfig')
 require('config.mapping')
 
+vim.diagnostic.config({
+	virtual_lines = {
+		current_line = true
+	}
+})
+
 local opt = vim.opt
 
 -- remove the '~' in the empty content.
@@ -42,6 +48,7 @@ opt.smoothscroll = true
 opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
 opt.foldmethod = "expr"
 opt.foldtext = ""
+opt.foldlevelstart = 99
 
 
 opt.smartcase = true
@@ -57,16 +64,15 @@ opt.wildignorecase = true
 opt.wildmode = "longest:full,full"
 opt.wildmenu = true
 
-
 -- UI
 
 -- Set transparent background
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NonText", { bg = "none" }) -- Background for ~ lines after EOF
-vim.api.nvim_set_hl(0, "LineNr", { bg = "none" }) -- Line numbers
-vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" }) -- Folding column
-vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" }) -- Gutter (e.g., Git signs)
-vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" }) -- ~ lines at the end of the file
-vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" }) -- Status line
+vim.api.nvim_set_hl(0, "NonText", { bg = "none" })      -- Background for ~ lines after EOF
+vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })       -- Line numbers
+vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" })   -- Folding column
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })   -- Gutter (e.g., Git signs)
+vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })  -- ~ lines at the end of the file
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })   -- Status line
 vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" }) -- Inactive status lines
-vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" }) -- Vertical split borders
+vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })    -- Vertical split borders
