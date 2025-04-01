@@ -187,7 +187,9 @@ local blink = {
 			list = { selection = { preselect = false, auto_insert = true } },
 			menu = {
 				border = "single",
-				auto_show = false,
+        auto_show = function(ctx)
+          return ctx.mode ~= "cmdline"
+        end,
 			},
 			documentation = {
 				window = {
