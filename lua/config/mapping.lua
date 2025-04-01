@@ -4,7 +4,11 @@ map("n", "<leader>gg", "<cmd> LazyGit <CR>", {
 	desc = "LazyGit",
 })
 
-map("n", "<C-Q>", "<cmd> nohlsearch <CR>", {
+map("n", "<Esc>", "<cmd> nohlsearch <CR>", {
+	desc = "Remove Search HL",
+})
+
+map("n", "<C-Q>", "<cmd> qa <CR>", {
 	desc = "Remove Search HL",
 })
 
