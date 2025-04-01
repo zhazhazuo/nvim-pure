@@ -9,6 +9,16 @@ vim.diagnostic.config({
 
 local opt = vim.opt
 
+-- enable spell check
+opt.spell = true
+opt.spelllang = "en"
+
+-- for high performance
+opt.lazyredraw = true
+opt.hidden = true
+opt.updatetime = 300
+
+
 -- remove the '~' in the empty content.
 opt.fillchars = { eob = ' ' }
 
@@ -58,11 +68,13 @@ opt.smartindent = true
 -- Enable persistent undo
 opt.undofile = true
 
--- FIXME: not work
--- to set the case insisetive in command line
+-- to set the case insensitive in command line
 opt.wildignorecase = true
 opt.wildmode = "longest:full,full"
 opt.wildmenu = true
+-- to set the case insensitive in search line
+opt.ignorecase = true
+opt.smartcase = true
 
 -- UI
 
