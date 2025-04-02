@@ -3,9 +3,20 @@ local lazygit = {
 		"kdheepak/lazygit.nvim",
 		cmd = "LazyGit",
 		config = function()
-			require("telescope").load_extension "lazygit"
+			require("telescope").load_extension("lazygit")
 		end,
 	},
+}
+
+local diff_view = {
+	"sindrets/diffview.nvim",
+	cmd = { "DiffviewOpen", "DiffviewToggleFiles" },
+	dependencies = {
+		"TimUntersberger/neogit",
+	},
+	config = function()
+		require("diffview").setup()
+	end,
 }
 
 local gitsigns = {
@@ -61,17 +72,22 @@ local gitsigns = {
 			map("n", "<leader>hu", gs.undo_stage_hunk, "Undo Stage Hunk")
 			map("n", "<leader>hR", gs.reset_buffer, "Reset Buffer")
 			map("n", "<leader>hp", gs.preview_hunk, "Preview Hunk")
-			map("n", "<leader>hb", function() gs.blame_line({ full = true }) end, "Blame Line")
+			map("n", "<leader>hb", function()
+				gs.blame_line({ full = true })
+			end, "Blame Line")
 			map("n", "<leader>hd", gs.diffthis, "Diff This")
-			map("n", "<leader>hD", function() gs.diffthis("~") end, "Diff This ~")
+			map("n", "<leader>hD", function()
+				gs.diffthis("~")
+			end, "Diff This ~")
 			map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
 		end,
 	},
 }
 
 local config = {
+	diff_view,
 	gitsigns,
-	lazygit
+	lazygit,
 }
 
 return config
