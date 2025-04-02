@@ -8,6 +8,46 @@ local comment = {
 	},
 }
 
+-- show the above context when it is outside
+local context = {
+	"nvim-treesitter/nvim-treesitter-context",
+	event = "BufReadPost",
+	opts = {
+		throttle = true,
+		max_lines = 0,
+		patterns = {
+			default = {
+				"class",
+				"function",
+				"method",
+			},
+		},
+	},
+}
+
+local spectre = {
+	"nvim-pack/nvim-spectre",
+	build = false,
+	cmd = "Spectre",
+	opts = { open_cmd = "noswapfile vnew" },
+	keys = {
+		{
+			"<leader>S",
+			function()
+				require("spectre").Toggle()
+			end,
+			desc = "Toggle Spectre",
+		},
+		{
+			"<leader>sp",
+			function()
+				require("spectre").open_file_search({ select_word = true })
+			end,
+			desc = "Search Word in Current File (Spectre)",
+		},
+	},
+}
+
 local trouble = {
 	"folke/trouble.nvim",
 	opts = {}, -- for default options, refer to the configuration section for custom setup.
@@ -64,6 +104,8 @@ local mason = {
 }
 
 return {
+	context,
+	spectre,
 	trouble,
 	comment,
 	lspconfig,
