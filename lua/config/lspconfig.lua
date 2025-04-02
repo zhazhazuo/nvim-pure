@@ -10,7 +10,7 @@ M.init = function(client)
 	end
 end
 
-local lsp_list = { "lua_ls", "markdown_oxide" }
+local lsp_list = { "lua_ls", "markdown_oxide", "html", "cssls" }
 
 for _, lsp in ipairs(lsp_list) do
 	lspconfig[lsp].setup({
