@@ -1,3 +1,19 @@
+local img_clip = {
+	"HakonHarnes/img-clip.nvim",
+	event = "VeryLazy",
+	opts = {
+		-- add options here
+		-- or leave it empty to use the default settings
+		default = {
+			dir_path = "5-Achive/Assets",
+		},
+	},
+	keys = {
+		-- suggested keymap
+		{ "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+	},
+}
+
 local render_markdown = {
 	"MeanderingProgrammer/render-markdown.nvim",
 	-- dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
@@ -8,7 +24,7 @@ local render_markdown = {
 	opts = {},
 	lazy = false,
 	config = function()
-		require("render-markdown").setup {
+		require("render-markdown").setup({
 			heading = { position = "inline" },
 			quote = { repeat_linebreak = true },
 			win_options = {
@@ -16,7 +32,7 @@ local render_markdown = {
 				breakindent = { default = false, rendered = true },
 				breakindentopt = { default = "", rendered = "" },
 			},
-		}
+		})
 	end,
 }
 
@@ -56,6 +72,7 @@ local obsidian = {
 }
 
 return {
+	img_clip,
 	render_markdown,
-	obsidian
+	obsidian,
 }
