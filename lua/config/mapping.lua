@@ -12,7 +12,6 @@ map("n", "<C-Q>", "<cmd> qa <CR>", {
 	desc = "Quit Vim",
 })
 
--- FIXME: it is not fast as the NVChad
 map("n", "<leader>x", function()
 	local win_type = vim.fn.win_gettype()
 
@@ -26,6 +25,8 @@ map("n", "<leader>x", function()
 	end
 end, {
 	desc = "Close Current Buffer",
+	noremap = true,
+	nowait = true,
 })
 
 map("n", "<leader>k", '<cmd> execute "%bdelete|edit#|bdelete#"<CR>', { desc = "Only keep current buffer" })
@@ -36,6 +37,7 @@ end, {
 	desc = "Reset the Workspace",
 })
 
+-- For motion
 map("i", "<C-h>", "<Left>", { desc = "move left" })
 map("i", "<C-l>", "<Right>", { desc = "move right" })
 map("i", "<C-j>", "<Down>", { desc = "move down" })
@@ -43,7 +45,7 @@ map("i", "<C-k>", "<Up>", { desc = "move up" })
 map("i", "<C-E>", "<C-o>$", { noremap = true, desc = "move to end" })
 
 -- For terminal
-map("t", "<C-X>", "<C-\\><C-n>", { desc = "Quit from T mode"})
+map("t", "<C-X>", "<C-\\><C-n>", { desc = "Quit from T mode" })
 
 -- For LSP
 map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
