@@ -18,10 +18,10 @@ local which_keys = {
 	},
 }
 
-local pqf = {
-	"yorickpeterse/nvim-pqf",
+local bqf = {
+	"kevinhwang91/nvim-bqf",
 	config = function()
-		require("pqf").setup()
+		require("bqf").setup()
 	end,
 }
 
@@ -88,7 +88,7 @@ local noice = {
 
 return {
 	which_keys,
-	pqf,
+	bqf,
 	statusline,
 	noice,
 	neoscroll,

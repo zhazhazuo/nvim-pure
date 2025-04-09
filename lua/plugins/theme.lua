@@ -1,10 +1,15 @@
 local hard_hack = {
-	'hardhackerlabs/theme-vim',
+	"hardhackerlabs/theme-vim",
 	config = function()
-		vim.cmd.colorscheme 'hardhacker'
+		-- vim.cmd.colorscheme("hardhacker")
 	end,
 }
 
+local habamax = { "ntk148v/habamax.nvim", dependencies = { "rktjmp/lush.nvim" } }
+
+vim.cmd.colorscheme("habamax")
+
 return {
-	hard_hack
+	habamax,
+	hard_hack,
 }

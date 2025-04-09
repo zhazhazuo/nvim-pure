@@ -78,6 +78,7 @@ opt.smartcase = true
 
 -- Set transparent background
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "NonText", { bg = "none" }) -- Background for ~ lines after EOF
 vim.api.nvim_set_hl(0, "LineNr", { bg = "none" }) -- Line numbers
 vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" }) -- Folding column
@@ -86,3 +87,11 @@ vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" }) -- ~ lines at the end of 
 vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" }) -- Status line
 vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" }) -- Inactive status lines
 vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" }) -- Vertical split borders
+
+-- Enable word-wrap for too long line.
+-- Enable line wrapping
+vim.opt.wrap = true
+-- Preserve indentation on wrapped lines
+vim.opt.breakindent = true
+-- Set breakindent options to shift and show break symbol
+vim.opt.breakindentopt = "sbr"
