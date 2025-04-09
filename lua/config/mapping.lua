@@ -19,7 +19,6 @@ map("n", "<leader>x", function()
 		vim.cmd("cclose")
 	elseif win_type == "loclist" then
 		vim.cmd("lclose")
-		-- Close current buffer (if not special)
 	else
 		vim.cmd("bdelete")
 	end
@@ -48,5 +47,5 @@ map("i", "<C-E>", "<C-o>$", { noremap = true, desc = "move to end" })
 map("t", "<C-X>", "<C-\\><C-n>", { desc = "Quit from T mode" })
 
 -- For LSP
-map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
-map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+-- map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
+-- map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
