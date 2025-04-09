@@ -1,3 +1,11 @@
+local firely = {
+	"christianrickert/vim-firefly",
+}
+
+local xcode = {
+	"arzg/vim-colors-xcode",
+}
+
 local hard_hack = {
 	"hardhackerlabs/theme-vim",
 	config = function()
@@ -5,11 +13,19 @@ local hard_hack = {
 	end,
 }
 
-local habamax = { "ntk148v/habamax.nvim", dependencies = { "rktjmp/lush.nvim" } }
+local oxocarbon = {
+	"nyoom-engineering/oxocarbon.nvim",
+	config = function()
+		-- vim.cmd.colorscheme("oxocarbon")
+	end,
+}
 
+-- the built-in habamax theme
 vim.cmd.colorscheme("habamax")
 
 return {
-	habamax,
+	firely,
+	xcode,
+	oxocarbon,
 	hard_hack,
 }

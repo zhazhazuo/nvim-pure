@@ -78,6 +78,7 @@ opt.smartcase = true
 
 -- Set transparent background
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "NonText", { bg = "none" }) -- Background for ~ lines after EOF
 vim.api.nvim_set_hl(0, "LineNr", { bg = "none" }) -- Line numbers
