@@ -80,7 +80,6 @@ opt.smartcase = true
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "NonText", { bg = "none" }) -- Background for ~ lines after EOF
 vim.api.nvim_set_hl(0, "LineNr", { bg = "none" }) -- Line numbers
 vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" }) -- Folding column
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" }) -- Gutter (e.g., Git signs)
