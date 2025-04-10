@@ -50,7 +50,31 @@ local blink = {
 			},
 			menu = {
 				border = "rounded",
+				-- define highlight to override the background color of menu
+				winhighlight = "Normal:Normal,FloatBorder:FloatBorder,Search:None",
 				auto_show = false,
+				draw = {
+					components = {
+						kind_icon = {
+							text = function(ctx)
+								local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
+								return kind_icon
+							end,
+							-- (optional) use highlights from mini.icons
+							highlight = function(ctx)
+								local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+								return hl
+							end,
+						},
+						kind = {
+							-- (optional) use highlights from mini.icons
+							highlight = function(ctx)
+								local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+								return hl
+							end,
+						},
+					},
+				},
 			},
 			documentation = {
 				window = {
