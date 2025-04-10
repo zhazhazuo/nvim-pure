@@ -44,15 +44,17 @@ local blink = {
 				range = "full",
 			},
 			list = { selection = { preselect = false, auto_insert = true } },
+			ghost_text = {
+				enabled = true,
+				show_without_selection = true,
+			},
 			menu = {
-				border = "single",
-				auto_show = function(ctx)
-					return ctx.mode ~= "cmdline"
-				end,
+				border = "rounded",
+				auto_show = false,
 			},
 			documentation = {
 				window = {
-					border = "single",
+					border = "rounded",
 				},
 				auto_show = false,
 			},
