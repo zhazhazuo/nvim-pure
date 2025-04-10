@@ -21,6 +21,7 @@ local oxocarbon = {
 }
 
 -- the built-in habamax theme
+-- vim.cmd.colorscheme("anysphere")
 vim.cmd.colorscheme("habamax")
 
 return {
