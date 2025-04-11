@@ -34,7 +34,7 @@ local flash = {
 					win = {
 						input = {
 							keys = {
-								["<c-r>"] = { "flash", mode = { "n", "i" } },
+								-- ["<c-r>"] = { "flash", mode = { "n", "i" } },
 								["s"] = { "flash" },
 							},
 						},

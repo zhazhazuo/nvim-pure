@@ -25,13 +25,13 @@ local config = {
 		picker = { enabled = true },
 	},
 	keys = {
-		{
-			"<leader>cR",
-			function()
-				Snacks.rename.rename_file()
-			end,
-			desc = "Rename File",
-		},
+		-- {
+		-- 	"<leader>cR",
+		-- 	function()
+		-- 		Snacks.rename.rename_file()
+		-- 	end,
+		-- 	desc = "Rename File",
+		-- },
 		-- explorer
 		{
 			"<leader>fl",
@@ -168,6 +168,56 @@ local config = {
 				Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
 			end,
 			desc = "Todo/Fix/Fixme",
+		},
+		{
+			"<leader>sb",
+			function()
+				Snacks.picker.lines()
+			end,
+			desc = "Buffer Lines",
+		},
+		{
+			"<leader>sB",
+			function()
+				Snacks.picker.grep_buffers()
+			end,
+			desc = "Grep Open Buffers",
+		},
+		{
+			"<leader>sw",
+			function()
+				Snacks.picker.grep_word()
+			end,
+			desc = "Visual selection or word",
+			mode = { "n", "x" },
+		},
+		{
+			"<leader>sd",
+			function()
+				Snacks.picker.diagnostics()
+			end,
+			desc = "Diagnostics",
+		},
+		{
+			"<leader>sD",
+			function()
+				Snacks.picker.diagnostics_buffer()
+			end,
+			desc = "Buffer Diagnostics",
+		},
+		{
+			"<leader>ss",
+			function()
+				Snacks.picker.lsp_symbols()
+			end,
+			desc = "LSP Symbols",
+		},
+		{
+			"<leader>sS",
+			function()
+				Snacks.picker.lsp_workspace_symbols()
+			end,
+			desc = "LSP Workspace Symbols",
 		},
 	},
 	init = function()
