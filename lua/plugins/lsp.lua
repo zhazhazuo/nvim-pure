@@ -66,7 +66,7 @@ local spectre = {
 	opts = { open_cmd = "noswapfile vnew" },
 	keys = {
 		{
-			"<leader>S",
+			"<leader>sP",
 			function()
 				require("spectre").Toggle()
 			end,
