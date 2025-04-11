@@ -30,11 +30,12 @@ end, {
 
 map("n", "<leader>k", '<cmd> execute "%bdelete|edit#|bdelete#"<CR>', { desc = "Only keep current buffer" })
 
-map("n", "<leader>ss", function()
+local function reset_the_world()
 	require("persistence").load()
-end, {
-	desc = "Reset the Workspace",
-})
+end
+
+-- Register the command
+vim.api.nvim_create_user_command("RW", reset_the_world, { nargs = 0 })
 
 -- For motion
 map("i", "<C-h>", "<Left>", { desc = "move left" })
@@ -45,7 +46,3 @@ map("i", "<C-E>", "<C-o>$", { noremap = true, desc = "move to end" })
 
 -- For terminal
 map("t", "<C-X>", "<C-\\><C-n>", { desc = "Quit from T mode" })
-
--- For LSP
--- map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
--- map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
