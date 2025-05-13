@@ -95,3 +95,28 @@ vim.opt.wrap = true
 vim.opt.breakindent = true
 -- Set breakindent options to shift and show break symbol
 vim.opt.breakindentopt = "sbr"
+
+-- For better Diff color
+-- Define a function to set diff highlights based on background
+local function set_diff_highlights()
+	local bg = vim.o.background
+	if bg == "dark" then
+		vim.api.nvim_set_hl(0, "DiffAdd", { bold = true, fg = "NONE", bg = "#2e4b2e" })
+		vim.api.nvim_set_hl(0, "DiffDelete", { bold = true, fg = "NONE", bg = "#4c1e15" })
+		vim.api.nvim_set_hl(0, "DiffChange", { bold = true, fg = "NONE", bg = "#45565c" })
+		vim.api.nvim_set_hl(0, "DiffText", { bold = true, fg = "NONE", bg = "#996d74" })
+	else
+		vim.api.nvim_set_hl(0, "DiffAdd", { bold = true, fg = "NONE", bg = "palegreen" })
+		vim.api.nvim_set_hl(0, "DiffDelete", { bold = true, fg = "NONE", bg = "tomato" })
+		vim.api.nvim_set_hl(0, "DiffChange", { bold = true, fg = "NONE", bg = "lightblue" })
+		vim.api.nvim_set_hl(0, "DiffText", { bold = true, fg = "NONE", bg = "lightpink" })
+	end
+end
+
+-- Create an augroup and autocmd for Colorscheme event
+vim.api.nvim_create_augroup("diffcolors", { clear = true })
+vim.api.nvim_create_autocmd("Colorscheme", {
+	group = "diffcolors",
+	pattern = "*",
+	callback = set_diff_highlights,
+})

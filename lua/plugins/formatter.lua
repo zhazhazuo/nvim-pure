@@ -7,7 +7,7 @@ return {
 			{
 				"<leader>fm",
 				function()
-					require("conform").format({ async = true })
+					require("conform").format({ async = true, lsp_fallback = true })
 				end,
 				mode = "",
 				desc = "Format buffer",
@@ -16,6 +16,7 @@ return {
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
+				sql = { "sqlfmt" },
 				python = { "isort", "black" },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
 				javascriptreact = { "prettierd", "prettier", stop_after_first = true },
