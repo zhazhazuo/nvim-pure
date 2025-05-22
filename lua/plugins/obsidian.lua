@@ -14,9 +14,55 @@ local img_clip = {
 	},
 }
 
+local markdown_view = {
+	"OXY2DEV/markview.nvim",
+	lazy = false,
+	config = function()
+		require("markview").setup({
+			markdown = {
+				list_items = {
+					shift_width = function(buffer, item)
+						--- Reduces the `indent` by 1 level.
+						---
+						---         indent                      1
+						--- ------------------------- = 1 ÷ --------- = new_indent
+						--- indent * (1 / new_indent)       new_indent
+						---
+						local parent_indnet = math.max(1, item.indent - vim.bo[buffer].shiftwidth)
+
+						return item.indent * (1 / (parent_indnet * 2))
+					end,
+					marker_minus = {
+						add_padding = function(_, item)
+							return item.indent > 1
+						end,
+					},
+				},
+			},
+			preview = {
+				icon_provider = "devicons",
+			},
+
+			preview_ignore = {
+				markdown_inline = {
+					-- For enabling using "gd" to navigate in the Obsidian.
+					"!internal_links",
+				},
+			},
+		})
+	end,
+
+	-- For blink.cmp's completion
+	-- source
+	-- dependencies = {
+	--     "saghen/blink.cmp"
+	-- },
+}
+
 local render_markdown = {
 	"MeanderingProgrammer/render-markdown.nvim",
 	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+	enabled = false,
 	---@module 'render-markdown'
 	---@type render.md.UserConfig
 	opts = {},
@@ -64,6 +110,7 @@ local obsidian = {
 
 return {
 	img_clip,
+	markdown_view,
 	render_markdown,
 	obsidian,
 }

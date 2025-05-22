@@ -1,28 +1,41 @@
+local codeAction = {
+	"aznhe21/actions-preview.nvim",
+	keys = {
+		{
+			"gra",
+			function()
+				require("actions-preview").code_actions()
+			end,
+			desc = "Toggle Spectre",
+		},
+	},
+}
+
 local indentScope = {
-  "echasnovski/mini.indentscope",
-  event = "BufEnter",
-  opts = {
-    symbol = "│",
-    options = { try_as_border = true },
-  },
-  init = function()
-    vim.api.nvim_create_autocmd("FileType", {
-      pattern = {
-        "help",
-        "neo-tree",
-        "Trouble",
-        "trouble",
-        "lazy",
-        "dashboard",
-        "mason",
-        "notify",
-        "toggleterm",
-      },
-      callback = function()
-        vim.b.miniindentscope_disable = true
-      end,
-    })
-  end,
+	"echasnovski/mini.indentscope",
+	event = "BufEnter",
+	opts = {
+		symbol = "│",
+		options = { try_as_border = true },
+	},
+	init = function()
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = {
+				"help",
+				"neo-tree",
+				"Trouble",
+				"trouble",
+				"lazy",
+				"dashboard",
+				"mason",
+				"notify",
+				"toggleterm",
+			},
+			callback = function()
+				vim.b.miniindentscope_disable = true
+			end,
+		})
+	end,
 }
 
 local hlarg = {
@@ -145,4 +158,5 @@ return {
 	comment,
 	lspconfig,
 	mason,
+	codeAction
 }
