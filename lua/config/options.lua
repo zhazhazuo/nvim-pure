@@ -74,6 +74,10 @@ opt.wildmenu = true
 opt.ignorecase = true
 opt.smartcase = true
 
+-- to use space instead of tab
+opt["tabstop"] = 4
+opt["shiftwidth"] = 4
+
 -- UI
 
 -- Set transparent background
