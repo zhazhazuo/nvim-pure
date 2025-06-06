@@ -156,6 +156,13 @@ local config = {
 			desc = "LSP Symbols",
 		},
 		{
+			'<leader>s"',
+			function()
+				Snacks.picker.registers()
+			end,
+			desc = "Registers",
+		},
+		{
 			"<leader>st",
 			function()
 				Snacks.picker.todo_comments()
