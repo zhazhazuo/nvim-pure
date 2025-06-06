@@ -10,7 +10,7 @@ M.init = function(client)
 	end
 end
 
-local lsp_list = { "lua_ls", "markdown_oxide", "html", "cssls" }
+local lsp_list = { "pyright", "lua_ls", "markdown_oxide", "html", "cssls" }
 
 for _, lsp in ipairs(lsp_list) do
 	lspconfig[lsp].setup({
@@ -19,8 +19,20 @@ for _, lsp in ipairs(lsp_list) do
 	})
 end
 
+local vue_language_server_path = vim.fn.stdpath("data")
+	.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+
 lspconfig.ts_ls.setup({
 	capabilities = require("blink.cmp").get_lsp_capabilities(M.capabilities),
 	on_init = M.init,
+	init_options = {
+		plugins = {
+			{
+				name = "@vue/typescript-plugin",
+				location = vue_language_server_path,
+				languages = { "vue" },
+			},
+		},
+	},
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 })
