@@ -1,3 +1,5 @@
+local web_icons = { "nvim-tree/nvim-web-devicons", opts = {} }
+
 local which_keys = {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
@@ -88,6 +90,7 @@ local noice = {
 }
 
 return {
+	web_icons,
 	which_keys,
 	bqf,
 	statusline,
