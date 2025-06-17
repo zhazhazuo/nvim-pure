@@ -15,14 +15,7 @@ local markdown_view = {
 	"OXY2DEV/markview.nvim",
 	lazy = false,
 	config = function()
-		local presets = require("markview.presets").headings
-
 		require("markview").setup({
-
-			markdown = {
-				headings = presets.simple,
-			},
-
 			preview = {
 				icon_provider = "devicons",
 			},
@@ -35,12 +28,6 @@ local markdown_view = {
 			},
 		})
 	end,
-
-	-- For blink.cmp's completion
-	-- source
-	-- dependencies = {
-	--     "saghen/blink.cmp"
-	-- },
 }
 
 local render_markdown = {

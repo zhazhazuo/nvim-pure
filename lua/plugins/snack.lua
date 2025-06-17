@@ -3,7 +3,7 @@ local config = {
 	priority = 1000,
 	lazy = false,
 	opts = {
-		bigfile = { enabled = true },
+		bigfile = { enabled = false },
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
 		rename = { enabled = true },
@@ -155,13 +155,7 @@ local config = {
 			end,
 			desc = "LSP Symbols",
 		},
-		{
-			'<leader>s"',
-			function()
-				Snacks.picker.registers()
-			end,
-			desc = "Registers",
-		},
+		{ '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
 		{
 			"<leader>st",
 			function()
