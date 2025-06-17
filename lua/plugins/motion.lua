@@ -20,12 +20,20 @@ local tmux_navigator = {
 local flash = {
 	"folke/flash.nvim",
 	event = "VeryLazy",
-	---@type Flash.Config
+	config = function()
+		require("flash").toggle(false)
+	end,
 	opts = {},
-  -- stylua: ignore
-  keys = {
-    { "R", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-  },
+	keys = {
+		{
+			"R",
+			mode = { "n", "x", "o" },
+			function()
+				require("flash").treesitter()
+			end,
+			desc = "Flash Treesitter",
+		},
+	},
 	specs = {
 		{
 			"folke/snacks.nvim",
@@ -70,9 +78,9 @@ local leap = {
 	"ggandor/leap.nvim",
 	event = "Vimenter",
 	config = function()
-		vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward)")
-		vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap-backward)")
-		vim.keymap.set({ "n", "x", "o" }, "ts", "<Plug>(leap-from-window)");
+		vim.keymap.set({ "n", "x", "o" }, "f", "<Plug>(leap-forward)")
+		vim.keymap.set({ "n", "x", "o" }, "F", "<Plug>(leap-backward)")
+		vim.keymap.set({ "n", "x", "o" }, "tf", "<Plug>(leap-from-window)")
 	end,
 }
 
