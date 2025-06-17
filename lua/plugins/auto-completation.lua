@@ -44,10 +44,10 @@ local blink = {
 				range = "full",
 			},
 			list = { selection = { preselect = false, auto_insert = true } },
-			ghost_text = {
-				enabled = true,
-				show_without_selection = true,
-			},
+			-- ghost_text = {
+			-- 	enabled = true,
+			-- 	show_without_selection = true,
+			-- },
 			menu = {
 				border = "rounded",
 				-- define highlight to override the background color of menu
