@@ -1,5 +1,6 @@
 local codeAction = {
 	"aznhe21/actions-preview.nvim",
+	enabled = false,
 	keys = {
 		{
 			"gra",
@@ -9,6 +10,24 @@ local codeAction = {
 			desc = "Toggle Spectre",
 		},
 	},
+}
+
+local tinyCodeAction = {
+	"rachartier/tiny-code-action.nvim",
+	dependencies = {
+		{ "nvim-lua/plenary.nvim" },
+	},
+	event = "LspAttach",
+	opts = {
+		picker = {
+			"snacks",
+		},
+	},
+	config = function()
+		vim.keymap.set("n", "gra", function()
+			require("tiny-code-action").code_action()
+		end, { noremap = true, silent = true })
+	end,
 }
 
 local indentScope = {
@@ -158,5 +177,6 @@ return {
 	comment,
 	lspconfig,
 	mason,
-	codeAction
+	codeAction,
+	tinyCodeAction,
 }

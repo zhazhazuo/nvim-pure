@@ -22,16 +22,11 @@ local config = {
 				inline = false,
 			},
 		},
-		picker = { enabled = true },
+		picker = {
+			enabled = true,
+		},
 	},
 	keys = {
-		-- {
-		-- 	"<leader>cR",
-		-- 	function()
-		-- 		Snacks.rename.rename_file()
-		-- 	end,
-		-- 	desc = "Rename File",
-		-- },
 		-- explorer
 		{
 			"<leader>fl",
@@ -155,7 +150,13 @@ local config = {
 			end,
 			desc = "LSP Symbols",
 		},
-		{ '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
+		{
+			'<leader>s"',
+			function()
+				Snacks.picker.registers()
+			end,
+			desc = "Registers",
+		},
 		{
 			"<leader>st",
 			function()
