@@ -36,10 +36,10 @@ local neoscroll = {
 }
 
 local statusline = {
-	"echasnovski/mini.statusline",
-	version = "false",
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		require("mini.statusline").setup()
+		require("lualine").setup()
 	end,
 }
 
