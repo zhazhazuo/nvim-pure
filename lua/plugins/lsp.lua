@@ -20,7 +20,7 @@ local tinyCodeAction = {
 	event = "LspAttach",
 	opts = {
 		picker = {
-			"snacks",
+			"buffer",
 		},
 	},
 	config = function()
@@ -177,6 +177,6 @@ return {
 	comment,
 	lspconfig,
 	mason,
-	codeAction,
+	-- codeAction,
 	tinyCodeAction,
 }

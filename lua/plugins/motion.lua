@@ -17,6 +17,17 @@ local tmux_navigator = {
 	},
 }
 
+local hop = {
+	"phaazon/hop.nvim",
+	branch = "v2", -- optional but strongly recommended
+	config = function()
+		require("hop").setup()
+	end,
+	keys = {
+		{ "<leader>w", "<cmd>HopWordCurrentLine<cr>" },
+	},
+}
+
 local flash = {
 	"folke/flash.nvim",
 	event = "VeryLazy",
@@ -88,4 +99,5 @@ return {
 	tmux_navigator,
 	flash,
 	leap,
+	hop,
 }
