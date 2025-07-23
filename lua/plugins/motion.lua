@@ -89,8 +89,8 @@ local leap = {
 	"ggandor/leap.nvim",
 	event = "Vimenter",
 	config = function()
-		vim.keymap.set({ "n", "x", "o" }, "f", "<Plug>(leap-forward)")
-		vim.keymap.set({ "n", "x", "o" }, "F", "<Plug>(leap-backward)")
+		vim.keymap.set({ "n", "x", "o" }, "t", "<Plug>(leap-forward)")
+		vim.keymap.set({ "n", "x", "o" }, "T", "<Plug>(leap-backward)")
 		vim.keymap.set({ "n", "x", "o" }, "tf", "<Plug>(leap-from-window)")
 	end,
 }

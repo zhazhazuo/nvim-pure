@@ -21,8 +21,9 @@ local markdown_view = {
 			preview = {
 				icon_provider = "devicons",
 			},
+
 			markdown = {
-				headings = heading.simple,
+				-- headings = heading.simple,
 			},
 			preview_ignore = {
 				markdown_inline = {

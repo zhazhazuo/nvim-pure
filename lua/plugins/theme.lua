@@ -41,10 +41,9 @@ local grubox = {
 		vim.cmd.colorscheme("gruvbox-material")
 
 		vim.cmd([[
-			highlight @markup.heading.2.markdown guifg=#FF5555 gui=bold
-			highlight @markup.heading.3.markdown guifg=#F1FA8C gui=bold
-			highlight @markup.heading.4.markdown guifg=#8BE9FD gui=bold
-			highlight @markup.heading.5.markdown guifg=#50FA7B gui=bold
+			highlight @markup.heading.2.markdown guifg=#F1FA8C gui=bold
+			highlight @markup.heading.3.markdown guifg=#8BE9FD gui=bold
+			highlight @markup.heading.4.markdown guifg=#50FA7B gui=bold
 			highlight @markup.heading.5.markdown guifg=#BD93F9 gui=bold
 			highlight @markup.heading.6.markdown guifg=#FF79C6 gui=bold
 		]])

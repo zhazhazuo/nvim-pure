@@ -78,6 +78,9 @@ opt.smartcase = true
 opt["tabstop"] = 4
 opt["shiftwidth"] = 4
 
+-- add the max length to enable LSP.
+opt.maxmempattern = 1000000
+
 -- UI
 
 -- Set transparent background
