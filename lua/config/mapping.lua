@@ -46,3 +46,6 @@ map("i", "<C-E>", "<C-o>$", { noremap = true, desc = "move to end" })
 
 -- For terminal
 map("t", "<C-X>", "<C-\\><C-n>", { desc = "Quit from T mode" })
+
+map("n", "gU", [[:<C-u>s/\<./\u&/g<CR> :nohlsearch<CR>]], { desc = "Upper the First Letter" })
+

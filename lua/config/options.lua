@@ -41,6 +41,8 @@ opt.shiftwidth = 2 -- Size of an indent
 -- True color support
 opt.termguicolors = true
 
+opt.pumblend = 10
+
 -- Allow cursor to move where there is no text in visual block mode
 opt.virtualedit = "block"
 
@@ -75,8 +77,9 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- to use space instead of tab
-opt["tabstop"] = 4
-opt["shiftwidth"] = 4
+opt["tabstop"] = 2
+opt["shiftwidth"] = 2
+opt.expandtab = true
 
 -- add the max length to enable LSP.
 opt.maxmempattern = 1000000
@@ -93,7 +96,8 @@ vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" }) -- Gutter (e.g., Git signs
 vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" }) -- ~ lines at the end of the file
 vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" }) -- Status line
 vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" }) -- Inactive status lines
-vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" }) -- Vertical split borders
+vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" }) -- Vertical split borders
 
 -- Enable word-wrap for too long line.
 -- Enable line wrapping

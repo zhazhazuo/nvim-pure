@@ -1,28 +1,3 @@
-local firely = {
-	"christianrickert/vim-firefly",
-}
-
-local xcode = {
-	"arzg/vim-colors-xcode",
-	config = function()
-		-- vim.cmd.colorscheme("xcodehc")
-	end,
-}
-
-local hard_hack = {
-	"hardhackerlabs/theme-vim",
-	config = function()
-		-- vim.cmd.colorscheme("hardhacker")
-	end,
-}
-
-local oxocarbon = {
-	"nyoom-engineering/oxocarbon.nvim",
-	config = function()
-		-- vim.cmd.colorscheme("oxocarbon")
-	end,
-}
-
 local grubox = {
 	"sainnhe/gruvbox-material",
 	lazy = false,
@@ -50,14 +25,16 @@ local grubox = {
 	end,
 }
 
--- the built-in habamax theme
--- vim.cmd.colorscheme("habamax")
--- vim.cmd.colorscheme("anysphere")
+local cyber_dream = {
+	"scottmckendry/cyberdream.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		vim.cmd.colorscheme("cyberdream")
+	end,
+}
 
 return {
-	firely,
-	xcode,
-	oxocarbon,
-	hard_hack,
-	grubox,
+	-- grubox,
+	cyber_dream,
 }
