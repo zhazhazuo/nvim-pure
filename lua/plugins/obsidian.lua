@@ -11,48 +11,48 @@ local img_clip = {
 	keys = {},
 }
 
-local markdown_view = {
-	"OXY2DEV/markview.nvim",
-	lazy = false,
-	config = function()
-		local heading = require("markview.presets").headings
-
-		require("markview").setup({
-			preview = {
-				icon_provider = "devicons",
-			},
-
-			markdown = {
-				-- headings = heading.simple,
-			},
-			preview_ignore = {
-				markdown_inline = {
-					-- For enabling using "gd" to navigate in the Obsidian.
-					"!internal_links",
-				},
-			},
-			experimental = {
-				check_rtp_message = false,
-			},
-		})
-
-		require("markview.extras.checkboxes").setup({
-			default = "X",
-			remove_style = "disable",
-			states = {
-				{ " ", "/", "X" },
-				{ "<", ">" },
-				{ "?", "!", "*" },
-				{ '"' },
-				{ "l", "b", "i" },
-				{ "S", "I" },
-				{ "p", "c" },
-				{ "f", "k", "w" },
-				{ "u", "d" },
-			},
-		})
-	end,
-}
+-- local markdown_view = {
+-- 	"OXY2DEV/markview.nvim",
+-- 	lazy = false,
+-- 	config = function()
+-- 		local heading = require("markview.presets").headings
+--
+-- 		require("markview").setup({
+-- 			preview = {
+-- 				icon_provider = "devicons",
+-- 			},
+--
+-- 			markdown = {
+-- 				-- headings = heading.simple,
+-- 			},
+-- 			preview_ignore = {
+-- 				markdown_inline = {
+-- 					-- For enabling using "gd" to navigate in the Obsidian.
+-- 					"!internal_links",
+-- 				},
+-- 			},
+-- 			experimental = {
+-- 				check_rtp_message = false,
+-- 			},
+-- 		})
+--
+-- 		require("markview.extras.checkboxes").setup({
+-- 			default = "X",
+-- 			remove_style = "disable",
+-- 			states = {
+-- 				{ " ", "/", "X" },
+-- 				{ "<", ">" },
+-- 				{ "?", "!", "*" },
+-- 				{ '"' },
+-- 				{ "l", "b", "i" },
+-- 				{ "S", "I" },
+-- 				{ "p", "c" },
+-- 				{ "f", "k", "w" },
+-- 				{ "u", "d" },
+-- 			},
+-- 		})
+-- 	end,
+-- }
 
 local render_markdown = {
 	"MeanderingProgrammer/render-markdown.nvim",
@@ -105,7 +105,7 @@ local obsidian = {
 
 return {
 	img_clip,
-	markdown_view,
+	-- markdown_view,
 	render_markdown,
 	obsidian,
 }
