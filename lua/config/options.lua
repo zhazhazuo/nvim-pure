@@ -70,7 +70,6 @@ opt.undofile = true
 
 -- to set the case insensitive in command line
 opt.wildignorecase = true
-opt.wildmode = "longest:full,full"
 opt.wildmenu = true
 -- to set the case insensitive in search line
 opt.ignorecase = true
