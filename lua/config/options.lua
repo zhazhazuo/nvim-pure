@@ -14,7 +14,7 @@ opt.spell = true
 opt.spelllang = "en"
 
 -- for high performance
-opt.lazyredraw = true
+opt.lazyredraw = false
 opt.hidden = true
 opt.updatetime = 300
 
@@ -97,6 +97,9 @@ vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" }) -- Status line
 vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" }) -- Inactive status lines
 vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" }) -- Vertical split borders
+
+-- Improve visual mode selection clarity
+vim.api.nvim_set_hl(0, "Visual", { bg = "#3b82f6", fg = "#ffffff" })
 
 -- Enable word-wrap for too long line.
 -- Enable line wrapping
