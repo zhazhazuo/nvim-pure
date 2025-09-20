@@ -43,11 +43,35 @@ local markdown_view = {
 	end,
 }
 
+local treesitter_parsers = {
+	"lua",
+	"vim",
+	"vimdoc",
+	"javascript",
+	"typescript",
+	"tsx",
+	"html",
+	"css",
+	"scss",
+	"vue",
+	"svelte",
+	"graphql",
+	"python",
+	"bash",
+	"json",
+	"yaml",
+	"toml",
+	"xml",
+	"markdown",
+	"markdown_inline",
+}
+
 local tressistter = {
 	"nvim-treesitter/nvim-treesitter",
 	version = false, -- last release is way too old and doesn't work on Windows
 	build = ":TSUpdate",
 	opts = {
+		ensure_installed = treesitter_parsers,
 		highlight = { enable = true },
 		indent = { enable = true },
 		textobjects = { enable = true },
