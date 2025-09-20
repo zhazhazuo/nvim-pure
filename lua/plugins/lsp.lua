@@ -160,10 +160,40 @@ local lspconfig = {
 	},
 }
 
+local mason_packages = {
+	-- LSP servers
+	"lua-language-server",
+	"pyright",
+	"typescript-language-server",
+	"html-lsp",
+	"css-lsp",
+	"tailwindcss-language-server",
+	"vue-language-server",
+	"emmet-ls",
+	"json-lsp",
+	"yaml-language-server",
+	"bash-language-server",
+	"marksman", -- markdown
+	"graphql-language-service-cli",
+
+	-- Linters
+	"eslint_d",
+	"prettier",
+
+	-- Formatters
+	"stylua",
+	"black",
+	"isort",
+	"shfmt",
+}
+
 local mason = {
 	"williamboman/mason.nvim",
 	cmd = "Mason",
 	build = ":MasonUpdate",
+	opts = {
+		ensure_installed = mason_packages,
+	},
 	config = function(_, opts)
 		require("mason").setup(opts)
 	end,
