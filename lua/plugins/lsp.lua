@@ -196,6 +196,30 @@ local mason = {
 	},
 	config = function(_, opts)
 		require("mason").setup(opts)
+
+		-- Create a command to install all packages manually
+		vim.api.nvim_create_user_command("MasonInstallAll", function()
+			local mr = require("mason-registry")
+			local installed = 0
+			local total = #opts.ensure_installed
+
+			mr.refresh(function()
+				for _, tool in ipairs(opts.ensure_installed or {}) do
+					local p = mr.get_package(tool)
+					if not p:is_installed() then
+						vim.notify("Installing " .. tool, vim.log.levels.INFO)
+						p:install():once("closed", function()
+							installed = installed + 1
+							if installed == total then
+								vim.notify("All Mason packages installed!", vim.log.levels.INFO)
+							end
+						end)
+					else
+						installed = installed + 1
+					end
+				end
+			end)
+		end, { desc = "Install all Mason packages from ensure_installed list" })
 	end,
 }
 
