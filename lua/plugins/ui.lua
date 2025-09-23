@@ -1,9 +1,25 @@
 local zen_mode = {
 	"folke/zen-mode.nvim",
 	opts = {
-		-- your configuration comes here
-		-- or leave it empty to use the default settings
-		-- refer to the configuration section below
+		window = {
+			backdrop = 0, -- fully transparent backdrop
+			options = {
+				signcolumn = "no",
+				number = false,
+				relativenumber = false,
+				cursorline = false,
+				cursorcolumn = false,
+				foldcolumn = "0",
+				list = false,
+			},
+		},
+		plugins = {
+			options = {
+				enabled = true,
+				ruler = false,
+				showcmd = false,
+			},
+		},
 	},
 }
 
