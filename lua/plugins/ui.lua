@@ -5,10 +5,6 @@ local zen_mode = {
 			backdrop = 0, -- fully transparent backdrop
 			options = {
 				signcolumn = "no",
-				number = false,
-				relativenumber = false,
-				cursorline = false,
-				cursorcolumn = false,
 				foldcolumn = "0",
 				list = false,
 			},

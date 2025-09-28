@@ -173,8 +173,10 @@ local mason_packages = {
 	"json-lsp",
 	"yaml-language-server",
 	"bash-language-server",
-	"marksman", -- markdown
 	"graphql-language-service-cli",
+
+  "marksman", -- markdown
+  "markdown-oxide", -- obsidian navigation
 
 	-- Linters
 	"eslint_d",
