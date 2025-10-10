@@ -11,70 +11,6 @@ local img_clip = {
 	keys = {},
 }
 
--- local markdown_view = {
--- 	"OXY2DEV/markview.nvim",
--- 	lazy = false,
--- 	config = function()
--- 		local heading = require("markview.presets").headings
---
--- 		require("markview").setup({
--- 			preview = {
--- 				icon_provider = "devicons",
--- 			},
---
--- 			markdown = {
--- 				-- headings = heading.simple,
--- 			},
--- 			preview_ignore = {
--- 				markdown_inline = {
--- 					-- For enabling using "gd" to navigate in the Obsidian.
--- 					"!internal_links",
--- 				},
--- 			},
--- 			experimental = {
--- 				check_rtp_message = false,
--- 			},
--- 		})
---
--- 		require("markview.extras.checkboxes").setup({
--- 			default = "X",
--- 			remove_style = "disable",
--- 			states = {
--- 				{ " ", "/", "X" },
--- 				{ "<", ">" },
--- 				{ "?", "!", "*" },
--- 				{ '"' },
--- 				{ "l", "b", "i" },
--- 				{ "S", "I" },
--- 				{ "p", "c" },
--- 				{ "f", "k", "w" },
--- 				{ "u", "d" },
--- 			},
--- 		})
--- 	end,
--- }
-
-local render_markdown = {
-	"MeanderingProgrammer/render-markdown.nvim",
-	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
-	enabled = false,
-	---@module 'render-markdown'
-	---@type render.md.UserConfig
-	opts = {},
-	lazy = false,
-	config = function()
-		require("render-markdown").setup({
-			heading = { position = "inline" },
-			quote = { repeat_linebreak = true },
-			win_options = {
-				showbreak = { default = "", rendered = "  " },
-				breakindent = { default = false, rendered = true },
-				breakindentopt = { default = "", rendered = "" },
-			},
-		})
-	end,
-}
-
 local obsidian = {
 	"epwalsh/obsidian.nvim",
 	version = "*", -- recommended, use latest release instead of latest commit
@@ -105,7 +41,5 @@ local obsidian = {
 
 return {
 	img_clip,
-	-- markdown_view,
-	render_markdown,
 	obsidian,
 }

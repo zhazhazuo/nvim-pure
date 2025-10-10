@@ -14,6 +14,9 @@ local markdown_view = {
 			markdown = {
 				-- headings = heading.simple,
 			},
+			latex = {
+				enable = true,
+			},
 			preview_ignore = {
 				markdown_inline = {
 					-- For enabling using "gd" to navigate in the Obsidian.
@@ -64,6 +67,7 @@ local treesitter_parsers = {
 	"xml",
 	"markdown",
 	"markdown_inline",
+	"latex",
 }
 
 local tressistter = {
@@ -91,7 +95,7 @@ local tressistter = {
 }
 
 local config = {
-  markdown_view,
+	markdown_view,
 	tressistter,
 	surround,
 	{
