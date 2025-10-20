@@ -4,7 +4,6 @@ return {
 		config = function()
 			require("mini.ai").setup()
 			require("mini.icons").setup()
-			require("mini.surround").setup()
 
 			local hipatterns = require("mini.hipatterns")
 			hipatterns.setup({
