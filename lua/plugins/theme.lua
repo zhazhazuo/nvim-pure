@@ -41,7 +41,18 @@ local cyber_dream = {
 	end,
 }
 
+local alabaster = {
+	url = "https://git.sr.ht/~p00f/alabaster.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		vim.cmd.set("termguicolors")
+		vim.cmd.colorscheme("alabaster")
+	end,
+}
+
 return {
 	-- grubox,
-	cyber_dream,
+	-- cyber_dream,
+	alabaster,
 }
