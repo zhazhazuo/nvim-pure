@@ -12,6 +12,7 @@ local opt = vim.opt
 -- enable spell check
 opt.spell = true
 opt.spelllang = "en"
+opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 
 -- for high performance
 opt.lazyredraw = false
@@ -99,7 +100,7 @@ vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" }) -- Vertical split borders
 
 -- Improve visual mode selection clarity
-vim.api.nvim_set_hl(0, "Visual", { bg = "#3b82f6", fg = "#ffffff" })
+-- vim.api.nvim_set_hl(0, "Visual", { bg = "#3b82f6", fg = "#ffffff" })
 
 -- Enable word-wrap for too long line.
 -- Enable line wrapping
