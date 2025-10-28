@@ -1,4 +1,13 @@
-return {
+local surround = {
+	"kylechui/nvim-surround",
+	version = "*", -- or use latest commit
+	event = "VeryLazy",
+	config = function()
+		require("nvim-surround").setup()
+	end,
+}
+
+local formatter = {
 	{
 		"stevearc/conform.nvim",
 		event = { "BufWritePre" },
@@ -40,4 +49,9 @@ return {
 			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 		end,
 	},
+}
+
+return {
+	formatter,
+	surround,
 }
