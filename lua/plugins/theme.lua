@@ -48,6 +48,7 @@ local alabaster = {
 	config = function()
 		vim.cmd.set("termguicolors")
 		vim.cmd.colorscheme("alabaster")
+		vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", { fg = "#888888", underline = true, sp = "#8ebeec" })
 	end,
 }
 
