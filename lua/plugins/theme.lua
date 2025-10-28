@@ -49,6 +49,10 @@ local alabaster = {
 		vim.cmd.set("termguicolors")
 		vim.cmd.colorscheme("alabaster")
 		vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", { fg = "#888888", underline = true, sp = "#8ebeec" })
+
+		vim.api.nvim_set_hl(0, "MiniStatuslineModeNormal", { link = "DiffAdd" })
+		vim.api.nvim_set_hl(0, "MiniStatuslineModeVisual", { link = "DiffDelete" })
+		vim.api.nvim_set_hl(0, "MiniStatuslineModeInput", { link = "DiffChange" })
 	end,
 }
 
