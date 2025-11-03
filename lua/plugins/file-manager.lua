@@ -44,28 +44,29 @@ local yazi = {
 }
 
 local oil = {
-  {
-    "stevearc/oil.nvim",
-    opts = {
-      keymaps = {
-        ["<C-s>"] = false,
-        ["<C-h>"] = false,
-        ["<C-x>"] = { "actions.select", opts = { vertical = true } },
-        ["<C-y>"] = { "actions.select", opts = { horizontal = true } },
-      },
-    },
-    event = "VeryLazy",
-    cmd = "Oil",
-    keys = {
-      {
-        "<leader>e",
-        function()
-          require("oil").open()
-        end,
-        desc = "Open parent directory",
-      },
-    },
-  },
+	{
+		"stevearc/oil.nvim",
+		opts = {
+			keymaps = {
+				["<C-s>"] = false,
+				["<C-h>"] = false,
+				["<C-x>"] = { "actions.select", opts = { vertical = true } },
+				["<C-y>"] = { "actions.select", opts = { horizontal = true } },
+			},
+			skip_confirm_for_simple_edits = true,
+		},
+		event = "VeryLazy",
+		cmd = "Oil",
+		keys = {
+			{
+				"<leader>e",
+				function()
+					require("oil").open()
+				end,
+				desc = "Open parent directory",
+			},
+		},
+	},
 }
 
 return {
