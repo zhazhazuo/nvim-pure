@@ -53,6 +53,7 @@ local alabaster = {
 		vim.api.nvim_set_hl(0, "MiniStatuslineModeNormal", { link = "DiffAdd" })
 		vim.api.nvim_set_hl(0, "MiniStatuslineModeVisual", { link = "DiffDelete" })
 		vim.api.nvim_set_hl(0, "MiniStatuslineModeInput", { link = "DiffChange" })
+		vim.api.nvim_set_hl(0, "@function.call", { link = "AlabasterBlue" })
 	end,
 }
 

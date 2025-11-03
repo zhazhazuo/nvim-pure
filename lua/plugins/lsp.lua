@@ -116,16 +116,28 @@ local spectre = {
 
 local trouble = {
 	"folke/trouble.nvim",
-	opts = {}, -- for default options, refer to the configuration section for custom setup.
+	opts = {
+		modes = {
+			test = {
+				mode = "diagnostics",
+				preview = {
+					type = "split",
+					relative = "win",
+					position = "right",
+					size = 0.3,
+				},
+			},
+		},
+	}, -- for default options, refer to the configuration section for custom setup.
 	cmd = "Trouble",
 	keys = {
 		{
-			"<leader>xx",
+			"<leader>tD",
 			"<cmd>Trouble diagnostics toggle<cr>",
 			desc = "Diagnostics (Trouble)",
 		},
 		{
-			"<leader>xX",
+			"<leader>td",
 			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
 			desc = "Buffer Diagnostics (Trouble)",
 		},
@@ -175,8 +187,8 @@ local mason_packages = {
 	"bash-language-server",
 	"graphql-language-service-cli",
 
-  "marksman", -- markdown
-  "markdown-oxide", -- obsidian navigation
+	"marksman", -- markdown
+	"markdown-oxide", -- obsidian navigation
 
 	-- Linters
 	"eslint_d",

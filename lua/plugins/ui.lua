@@ -14,6 +14,7 @@ local zen_mode = {
 				enabled = true,
 				ruler = false,
 				showcmd = false,
+        laststatus = 3
 			},
 		},
 	},
