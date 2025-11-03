@@ -11,8 +11,11 @@ local opt = vim.opt
 
 -- enable spell check
 opt.spell = true
-opt.spelllang = "en"
+opt.spelloptions = "camel,noplainbuffer"
+opt.spellcapcheck = ""
 opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+opt.spellsuggest = "best,9"
+opt.spelllang = { "en", "cjk" }
 
 -- for high performance
 opt.lazyredraw = false
