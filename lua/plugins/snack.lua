@@ -23,7 +23,9 @@ local config = {
 			},
 		},
 		picker = {
-			enabled = true,
+			layout = {
+				preset = "ivy_split",
+			},
 		},
 	},
 	keys = {
