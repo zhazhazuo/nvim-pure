@@ -237,6 +237,17 @@ local mason = {
 	end,
 }
 
+local quicker = {
+	"stevearc/quicker.nvim",
+	ft = "qf",
+	---@module "quicker"
+	---@type quicker.SetupOptions
+	opts = {},
+	config = function()
+		require("quicker").setup()
+	end,
+}
+
 return {
 	indentScope,
 	context,
@@ -246,5 +257,6 @@ return {
 	lspconfig,
 	mason,
 	-- codeAction,
+	quicker,
 	tinyCodeAction,
 }
