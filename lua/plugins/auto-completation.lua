@@ -39,6 +39,15 @@ local blink = {
 			nerd_font_variant = "normal",
 		},
 
+		cmdline = {
+			enabled = true,
+			completion = {
+				menu = {
+					auto_show = true,
+				},
+			},
+		},
+
 		completion = {
 			keyword = {
 				range = "full",
